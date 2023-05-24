@@ -1,6 +1,7 @@
-import { createApiRequests } from './createApiRequests';
+import { BASE_URL } from "@constants/urlConstants";
+import { createApiRequests } from "./createApiRequests";
 
-const fetchCartItemsMethods = createApiRequests('')('cart-items');
+const fetchCartItemsMethods = createApiRequests(BASE_URL)("cart-items");
 
 const fetchCartItems = {
   get: () => {
