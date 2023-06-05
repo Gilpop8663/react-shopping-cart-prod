@@ -1,6 +1,0 @@
-import{a as p}from"./handlers-2d2c9fc9.js";import{a as i}from"./index-aaf0b0c6.js";import"./_commonjsHelpers-042e6b4d.js";import"./serverUrlConstants-fe72d8a7.js";import"./styled-components.browser.esm-aaaef0f3.js";import"./index-8db94870.js";import"./index-6b0f0fe4.js";import"./index-0c9fedb2.js";import"./index-8ce4a492.js";import"./cartState-7478dda1.js";import"./fetchUtils-f1ccc203.js";import"./index-79938c21.js";import"./common-a48b2eb5.js";import"./CouponItem-3b870ea5.js";import"./theme-cf2b1b34.js";import"./index-77074ae7.js";import"./OrderItem-d4baa48e.js";import"./OrderItemInfo-1abee2ae.js";import"./index-fc5ca4cd.js";import"./index-a09c039b.js";import"./index-59547c10.js";import"./index-fa80f56e.js";import"./index-57ceba2c.js";import"./index-a48b44a1.js";import"./index-c18acebd.js";import"./index-4995a37d.js";import"./index-3388ab67.js";const k={component:i,title:"Pages"},r={args:{order:p[0]}};var o,t,m;r.parameters={...r.parameters,docs:{...(o=r.parameters)==null?void 0:o.docs,source:{originalSource:`{
-  args: {
-    order: MOCK_ORDER_LIST[0]
-  }
-}`,...(m=(t=r.parameters)==null?void 0:t.docs)==null?void 0:m.source}}};const q=["OrderDetailPage"];export{r as OrderDetailPage,q as __namedExportsOrder,k as default};
-//# sourceMappingURL=OrderDetail.stories-7e4c2990.js.map

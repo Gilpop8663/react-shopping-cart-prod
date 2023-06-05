@@ -1,7 +1,0 @@
-import{i as n,j as a}from"./styled-components.browser.esm-aaaef0f3.js";import{a as d,e as m,c as l}from"./index-0c9fedb2.js";import{f as o,a as p,u,s as O}from"./fetchUtils-f1ccc203.js";import{b as i}from"./serverUrlConstants-fe72d8a7.js";import{O as y}from"./OrderItem-d4baa48e.js";const L=({cartItemIds:r,couponId:e})=>e?{orderItemIds:r,couponId:e}:{orderItemIds:r},f=r=>r.map(e=>c(e)),c=r=>({id:r.id,totalItemsPrice:r.totalItemsPrice,discountPrice:r.discountPrice,deliveryFee:r.deliveryFee,orderItems:r.orderItems.map(e=>({orderItemId:e.orderItemId,name:e.name,price:e.price,imageUrl:e.imageUrl,quantity:e.quantity}))}),w=async({serverName:r,userInfo:e})=>{const t=await o(i(r),{email:e.email,password:e.password});return f(t)},R=async({serverName:r,orderId:e,userInfo:t})=>{const s=await o(`${i(r)}/${e}`,{email:t.email,password:t.password});return c(s)},j=async({serverName:r,cartItemIds:e,couponId:t,userInfo:s})=>{await p(i(r),L({cartItemIds:e,couponId:t}),{email:s.email,password:s.password})},x=d({key:"getOrderListSelector",get:async({get:r})=>{const e=r(u),t=r(O);return await w({serverName:t,userInfo:e})},cachePolicy_UNSTABLE:{eviction:"most-recent"}}),g=m({key:"orderListStateKey",default:x}),v=n.div`
-  display: flex;
-  flex-direction: column;
-
-  gap: 5rem;
-`;function b(){const r=l(g);return a.jsx(v,{children:r.map(e=>a.jsx(y,{order:e,isVisibleDetail:!0},e.id))})}export{b as O,R as g,j as s};
-//# sourceMappingURL=index-77074ae7.js.map
