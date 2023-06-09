@@ -1,4 +1,7 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+import { useRecoilRefresher_UNSTABLE } from 'recoil';
+import { getCartListSelector } from '@recoil/cart/selector/getCartListSelector';
+import { getCouponListSelector } from '@recoil/coupon/selector/getCouponListSelector';
 import CartListArea from '@components/cart/CartListArea';
 import CouponList from '@components/cart/CouponList';
 import SkeletonCart from '@components/cart/SkeletonCartItemList';
@@ -10,6 +13,8 @@ import * as S from './Cart.style';
 function Cart() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCoupon, setSelectedCoupon] = useState<CouponType | null>(null);
+  const couponRefresh = useRecoilRefresher_UNSTABLE(getCouponListSelector);
+  const cartRefresh = useRecoilRefresher_UNSTABLE(getCartListSelector);
 
   const onModalOpen = () => {
     setIsModalOpen(true);
@@ -26,6 +31,11 @@ function Cart() {
   const resetSelectedCoupon = () => {
     setSelectedCoupon(null);
   };
+
+  useEffect(() => {
+    couponRefresh();
+    cartRefresh();
+  }, [couponRefresh, cartRefresh]);
 
   return (
     <Layout>

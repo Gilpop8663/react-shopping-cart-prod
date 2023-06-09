@@ -7,6 +7,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 0 20px;
   margin: 0 auto;
+
   max-width: 100%;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.sm}) {
@@ -28,6 +29,10 @@ export const Container = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.xxl}) {
     max-width: 1320px;
   }
+`;
+
+export const LayoutContainer = styled(Container)`
+  padding: 11rem 0 3rem 0;
 `;
 
 export const Row = styled.div`
