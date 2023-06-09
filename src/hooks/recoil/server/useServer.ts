@@ -15,6 +15,12 @@ export const useServer = () => {
 
     const result = SERVER_NAME.filter((item) => item === value)[0];
 
+    if (!result) {
+      handleServer(SERVER_NAME[0]);
+      console.error('서버 이름을 찾을 수 없습니다.');
+      return;
+    }
+
     handleServer(result);
   };
 

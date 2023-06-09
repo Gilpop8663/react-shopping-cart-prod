@@ -43,8 +43,8 @@ function CartItemBox({ cartId, productId, imageUrl, name, price }: CartItemProps
           countInputRef={countInputRef}
           quantity={quantity}
           onQuantityBlur={(event) => onQuantityBlur(event, true)}
-          ariaIncreaseLabel={`${name}의 장바구니에 담긴 개수에서 하나 더하기`}
-          ariaDecreaseLabel={`${name}의 장바구니에 담긴 개수에서 하나 빼기`}
+          ariaIncreaseLabel={`${name} 장바구니 수량 증가`}
+          ariaDecreaseLabel={`${name} 장바구니 수량 감소`}
           isCartPage={true}
         />
         <S.PriceText>{`${(price * quantity).toLocaleString('ko-KR')} 원`}</S.PriceText>

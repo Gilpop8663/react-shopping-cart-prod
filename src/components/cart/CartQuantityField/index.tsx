@@ -31,18 +31,20 @@ function CartQuantityField({ product }: CartQuantityFieldProps) {
           countInputRef={countInputRef}
           quantity={quantity}
           onQuantityBlur={(event) => onQuantityBlur(event, false)}
-          ariaIncreaseLabel={`${product.name}의 장바구니에 담긴 개수에서 하나 더하기`}
-          ariaDecreaseLabel={`${product.name}의 장바구니에 담긴 개수에서 하나 빼기`}
+          ariaIncreaseLabel={`${product.name} 장바구니 수량 증가`}
+          ariaDecreaseLabel={
+            quantity > 0 ? `${product.name} 장바구니 수량 감소` : `${product.name} 장바구니 제거`
+          }
           isCartPage={false}
         />
       ) : (
         <S.CartIcon
           onClick={onAddItemToCartAndSyncClick}
           type="button"
-          aria-label={`${product.name}를 장바구니에 담기`}
+          aria-label={`${product.name}를 장바구니에 추가`}
           role="cart-icon"
         >
-          <img src={cartIcon} alt="장바구니 모양" />
+          <img src={cartIcon} alt="" />
         </S.CartIcon>
       )}
     </S.StepperContainer>

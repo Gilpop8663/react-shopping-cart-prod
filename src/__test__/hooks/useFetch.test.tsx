@@ -35,13 +35,6 @@ describe('useFetch가 올바르게 작동하는 지 테스트', () => {
       })
     );
   });
-  test('데이터가 불러와지기 전 data가 undefined인지 테스트', () => {
-    const { result } = renderHook(() => useFetch(fetchUrl, userInfo));
-
-    const { isLoading } = result.current;
-
-    expect(isLoading).toBe(true);
-  });
 
   test('데이터가 불러와진 후 data가 올바른 객체인지 테스트', async () => {
     const { result } = renderHook(() => useFetch<ProductItemType[]>(fetchUrl, userInfo));

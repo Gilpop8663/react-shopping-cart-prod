@@ -119,20 +119,20 @@ describe('쿠폰에 관련된 함수가 올바르게 작동해야 한다.', () =
   });
 
   test('사용 조건이 없는 정적 할인 쿠폰을 사용했을 때 총 상품 가격이 해당 쿠폰보다 적을 경우 0원을 반환한다.', () => {
-    const totalItemsPrice = 200000;
+    const totalItemsPrice = 2000;
     const deliveryFee = 3000;
 
     const priceCoupon: CouponType = {
       id: 2,
-      name: '40000원 이상 3000원 할인 쿠폰',
+      name: '생일 기념 3000원 할인 쿠폰',
       type: 'price',
       value: 3000,
-      minimumPrice: 40000,
+      minimumPrice: 0,
     };
 
     const result = getDiscountedTotalPrice({ totalItemsPrice, deliveryFee, coupon: priceCoupon });
 
-    expect(result).toBe(200000);
+    expect(result).toBe(0);
   });
 
   test('총 상품 가격이 0원일 때 쿠폰을 사용한다면 에러를 반환한다.', () => {

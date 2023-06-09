@@ -14,12 +14,13 @@ export const useFetch = <T>(
 
   const fetchData = async () => {
     try {
+      setIsLoading(true);
       const data = await fetchGet<T>(url, options);
 
       return data;
     } catch (error) {
       setError(error);
-      setIsLoading(true);
+
       return null;
     } finally {
       setIsLoading(false);

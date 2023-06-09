@@ -66,7 +66,6 @@ export const useCartOperations = (product: ProductItemType) => {
       addCartItem({ cartId: FAKE_CART_ID, product });
       await addItemToCartApi({ productId: product.id, serverName, userInfo });
     } catch (error) {
-      cartFetchData();
       console.error(error);
     } finally {
       cartFetchData();

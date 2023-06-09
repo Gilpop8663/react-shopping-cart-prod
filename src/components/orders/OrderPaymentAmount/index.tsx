@@ -11,7 +11,8 @@ function OrderPaymentAmount({
   deliveryFee,
   discountPrice,
 }: OrderPaymentAmountProps) {
-  const totalPaymentAmount = totalItemsPrice + deliveryFee - discountPrice;
+  const totalPaymentAmount = Math.max(totalItemsPrice + deliveryFee - discountPrice, 0);
+
   return (
     <div>
       <S.Title>결제금액 정보</S.Title>

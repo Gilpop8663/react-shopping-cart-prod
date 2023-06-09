@@ -46,7 +46,7 @@ function CartListArea({ onModalOpen, selectedCoupon, resetSelectedCoupon }: Cart
       userInfo,
     });
 
-    cartFetchData();
+    await cartFetchData();
 
     navigate(ORDER_PATH.COMPLETE, {
       state: {
