@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { ORDER_PATH } from '@router/router';
@@ -66,11 +65,9 @@ function CartListArea({ onModalOpen, selectedCoupon, resetSelectedCoupon }: Cart
       })
     : 0;
 
-  useEffect(() => {
-    if (discountPrice === 0) {
-      resetSelectedCoupon();
-    }
-  }, [discountPrice, resetSelectedCoupon]);
+  if (discountPrice === 0) {
+    resetSelectedCoupon();
+  }
 
   return (
     <div>
