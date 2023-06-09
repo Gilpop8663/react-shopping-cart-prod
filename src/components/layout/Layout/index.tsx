@@ -1,12 +1,16 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 import Header from '@components/layout/Header';
-import { Container } from '@styles/style';
+import { LayoutContainer } from '@styles/style';
 
 function Layout({ children }: PropsWithChildren) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header />
-      <Container>{children}</Container>
+      <LayoutContainer>{children}</LayoutContainer>
     </>
   );
 }

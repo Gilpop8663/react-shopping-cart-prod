@@ -2,16 +2,19 @@ import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const Navbar = styled.div`
-  background-color: ${({ theme }) => theme.colors.primaryColor};
+  position: fixed;
+  width: 100vw;
+
   color: ${({ theme }) => theme.colors.lightColor};
-  margin-bottom: 3rem;
+  background-color: ${({ theme }) => theme.colors.primaryColor};
 `;
 
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+
+  height: 8rem;
 `;
 
 export const HeaderLink = styled(Link)`
